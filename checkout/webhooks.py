@@ -31,10 +31,10 @@ def webhook(request):
         return HttpResponse(status=400)
     except stripe.error.SignatureVerificationError as e:
         # Invalid signature
-        print("first case")
+        print("second case")
         return HttpResponse(status=400)
     except Exception as e:
-        print("first case")
+        print("third case")
         return HttpResponse(content=e, status=400)
 
     # Set up a webhook handler
